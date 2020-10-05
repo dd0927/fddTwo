@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+            1.安装vue-------npm i vue
+            2.引入vue的包  
+            3.初始化vue实例
+     -->
+
+    <!-- ======================= -->
+
+    <!-- 
+         vue的基本功能模块，其实就是一个大型的模板引擎
+    -->
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            //视图 + 数据
+            el: '#app',
+            data: {
+                msg: 'thank you',
+                name: 'zs',
+                age: 18
+            }
+        })
+        //vue实例化的过程中，会将data中所有的数据，都会添加到vm实例上
+        console.log(vm.msg)
+    </script>
+    <!-- 
+        学习vue的注意点：
+           1.Vue的构造函数，首字母大写
+           2.el不能指定成body 或者html
+           3.到了vue，要时刻记住，数据驱动
+             数据变了，视图就会发生变化
+             要想视图变化，请操作数据
+             vue.msg = ....
+     -->
+</body>
+
+</html>

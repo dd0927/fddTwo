@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        //插值表达式： {{}} -----小胡子语法
+        //   作用：将data中的数据渲染到视图
+        //   语法：
+        //       {{house}}
+        //       {{obj.name}}
+        //       {{msg.toUpperCase()}}
+        //       {{支持三元运算符}}
+        //   注意点： 
+        //       不是data中的变量，不能直接使用
+        //       在插值表达式中，不能使用js语句
+        //       不能再html标签属性中，使用插值表达式
+     -->
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h1>{{obj.name}}</h1>
+        <h1>{{obj.age}}</h1>
+        <h1>{{msg.toUpperCase()}}</h1>
+        <h1>{{obj.age >= 18? '成年人':'小屁孩'}}</h1>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                obj: {
+                    name: 'zs',
+                    age: 18
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
