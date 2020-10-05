@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        计算属性：
+            如果一个结果，想要依赖data中的数据，但经过一定的运算，可以使用计算属性
+            模板写了大量的逻辑，会使得模板过重，不好维护
+            对于复杂的运算逻辑，我们可以使用计算属性
+        
+         1.计算属性的基本使用：
+             写在 computed中
+             和data一样，是用于提供属性的
+             写法上是一个函数，实际上是一个属性
+             计算属性中的this指向vm实例
+     -->
+    <div id="app">
+        <h1>{{reverseMsg}}</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+            },
+            computed: {
+                reverseMsg() {
+                    return this.msg.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

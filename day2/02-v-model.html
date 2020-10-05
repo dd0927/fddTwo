@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='msg'>
+        <!-- 双向数据绑定 -->
+        <input type="text" v-model='msg1'>
+        <hr>
+        <p>{{hobbyId}}</p>
+        <!-- select框的value值就是option的value值 -->
+        <select name="" id="" v-model="hobbyId">
+            <option value="1">吃饭</option>
+            <option value="2">睡觉</option>
+            <option value="3">打豆豆</option>
+        </select>
+        <hr>
+        <input type="checkbox" v-model="isSingle">单身
+
+    </div>
+    <!-- 
+        v-model作用： 给表单元素使用，双向数据绑定
+               语法： v-model="值"
+     -->
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue',
+                msg1: '',
+                desc: '描述: 大帅鹏, 帅帅帅, 老铁没毛病',
+                hobbyId: 3,
+                isSingle: true
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
