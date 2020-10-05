@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for='(item, index) in list2'>{{index}} 和 {{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value, prop) in obj">{{prop}}:{{value}}</li>
+        </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <!-- 
+        v-for的作用： 可以遍历数组或者对象
+        需要渲染谁就给谁加 v-for
+
+        1.遍历数组（常用）
+           v-for='item in 数组名'
+             ===============item为遍历的每一项
+           v-for='(item, index) in 数组名'
+             ===============item为遍历的每一项
+             ===============index为下标
+        2.遍历对象
+           v-for="(value, prop) in 对象名"
+             ===============value为属性值
+             ===============prop为属性名
+     -->
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                list: ['张飞', '貂蝉', '吕布', '甄姬'],
+                list2: ['榴莲', '香蕉', '苹果', '西瓜'],
+                obj: {
+                    name: '三姨太',
+                    age: 19,
+                    desc: '温柔贤惠, 会跳舞'
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

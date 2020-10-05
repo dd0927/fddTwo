@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h1 v-if="flag">hello,vip</h1>
+        <h1 v-else>谢谢</h1> -->
+
+
+        <div v-if="age >= 80">抽烟</div>
+        <div v-else-if="age >= 60">喝酒</div>
+        <div v-else-if="age >= 20">烫头</div>
+        <div v-else>打麻将</div>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+                age: 61,
+            },
+        })
+    </script>
+</body>
+
+</html>

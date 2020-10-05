@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        v-on作用： 用于注册事件
+
+        1.内联语句，将要执行的代码直接写在 " " 里面
+           好处： 简洁简单，适合与特别简单的代码
+           v-on：事件名="要执行的代码"
+        2.指定成methods中的函数
+           v-on：事件名="methods中的函数"
+        3.指定成methods中的函数并且传参
+           v-on：事件名="methods中的函数(参数1， 参数2， .....)"
+
+
+        简写：
+            v-on可以简写， @事件名
+     -->
+    <div id="app">
+        <!-- <button @click="isshow = !isshow">控制显隐</button> -->
+        <!-- <button @click="fn">控制显隐</button>
+        <h1 v-show="isshow"></h1> -->
+        <button @click="fn2(100)"></button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                isshow: 'true'
+            },
+            //方法放到methods中，methods中的this指向vm实例
+            methods: {
+                fn() {
+                    //此处就是通过驱动数据来更新视图
+                    this.isshow = !this.isshow
+                },
+                fn2(num) {
+                    console.log('fn2' + num)
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

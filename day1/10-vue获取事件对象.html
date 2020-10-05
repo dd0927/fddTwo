@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <a href="#" @click="fn">啦啦啦</a>
+        <a href="#" @click="fn1(100, $event)">gigigi</a>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <!-- 
+        a 标签点击会跳走，但是不希望跳，就可以组织默认行为 
+
+        1.阻止默认行为：
+           e.preventDefault()
+        2.阻止冒泡：
+           e.stopPropagation()
+
+        
+        vue中获取事件对象：
+            1.注册事件没有传参 @click="fn",直接通过形参就能获取
+            2.注册事件传参了 @click="fn(100, $event)",通过$event获取 e
+     -->
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue'
+            },
+            methods: {
+                fn(e) {
+                    e.preventDefault();
+                },
+                fn1(num, e) {
+                    console.log(num)
+                    e.preventDefault();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
